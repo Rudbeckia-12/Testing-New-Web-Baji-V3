@@ -1,5 +1,7 @@
 import { Link, Route, Routes } from 'react-router'
 import Header from './Header'
+import Listening from './Pages/Listening'
+import Footer from './Footer'
 
 function Home() {
   return (
@@ -43,6 +45,7 @@ function Home() {
         </div>
       </section>
       {/* About Section */}
+
       <section id='about' className='scroll-mt-24 bg-neutral-50 px-6 py-24 md:py-32'>
         <div className='mx-auto w-full max-w-[1000px]'>
 
@@ -137,11 +140,9 @@ function Home() {
         </div>
 
       </section>
+      
       {/* Listening Section */}
-      <section
-        id="listening"
-        className='scroll-mt-24 px-6 py-24 md:py-32'
-      >
+      <section id="listening" className='scroll-mt-24 px-6 py-24 md:py-32'>
         <div className='mx-auto w-full max-w-[1000px]'>
 
           <div className='mx-auto max-w-[650px] text-center'>
@@ -245,7 +246,7 @@ function Home() {
                 
                 <Link to='/songs' className='rounded-2xl border border-neutral-200 p-5 text-black no-underline transition duration-200 hover:translate-y-1 hover:border0neutral-400'>
                   <p className='text-[13px] font-semibold tracking-wide text-neutral-500'>
-                    Song
+                    Song Detail
                   </p>
                   <h3 className='mt-2 text-[19px] font-bold'>
                     Fantasy
@@ -259,7 +260,7 @@ function Home() {
                 
                 <Link to='/songs' className='rounded-2xl border border-neutral-200 p-5 text-black no-underline transition duration-200 hover:translate-y-1 hover:border0neutral-400'>
                   <p className='text-[13px] font-semibold tracking-wide text-neutral-500'>
-                    Song
+                    Song Detail
                   </p>
                   <h3 className='mt-2 text-[19px] font-bold'>
                     Ocean Song
@@ -273,7 +274,7 @@ function Home() {
                 
                 <Link to='/songs' className='rounded-2xl border border-neutral-200 p-5 text-black no-underline transition duration-200 hover:translate-y-1 hover:border0neutral-400'>
                   <p className='text-[13px] font-semibold tracking-wide text-neutral-500'>
-                    Song
+                    Song Detail
                   </p>
                   <h3 className='mt-2 text-[19px] font-bold'>
                     Rot
@@ -287,7 +288,7 @@ function Home() {
                 
                 <Link to='/songs' className='rounded-2xl border border-neutral-200 p-5 text-black no-underline transition duration-200 hover:translate-y-1 hover:border0neutral-400'>
                   <p className='text-[13px] font-semibold tracking-wide text-neutral-500'>
-                    Song
+                    Song Detail
                   </p>
                   <h3 className='mt-2 text-[19px] font-bold'>
                     Naivety
@@ -301,7 +302,7 @@ function Home() {
                 
                 <Link to='/songs' className='rounded-2xl border border-neutral-200 p-5 text-black no-underline transition duration-200 hover:translate-y-1 hover:border0neutral-400'>
                   <p className='text-[13px] font-semibold tracking-wide text-neutral-500'>
-                    Song
+                    Song Detail
                   </p>
                   <h3 className='mt-2 text-[19px] font-bold'>
                     Lust
@@ -310,8 +311,6 @@ function Home() {
                     Baji's Original
                   </p>
                 </Link>
-
-                
 
                 <div className='mt-6 flex justify-end'>
                   <Link to='/songs' className='font-semibold text-black no-underline transition-opacity hover:opacity-60'>
@@ -327,33 +326,20 @@ function Home() {
   )
 }
 
-function About() {
-  return (
-    <main>
-      <h1>About Bajiru</h1>
-    </main>
-  )
-}
-
 function App() {
   return (
     <>
       <Header />
 
       <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-
-        <Route
-          path="About"
-          element={<About />}
-        />
-      </Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/listening" element={<Listening />} />
+    </Routes>
+      <Footer />
     
     </>
   )
 }
+
 
 export default App
